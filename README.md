@@ -29,3 +29,22 @@ $ git add .
 $ git commit -m 'modify file'  
 $ git push origin master
 ~~~
+
+## 서버 구축
+1. https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.30/bin/ 
+에서 apache-tomcat-8.0.30.exe  다운로드 (windows 32/64 용)
+* 서버가 자주 바뀐다면 통 파일(zip) 다운하면 됨. 나는 설치에 의의를 두므로 실행파일 다운하였음. 
+
+2. C:\Tomcat 8.0 - 톰캑 설치 경로 이걸로 바꾸기
+이때 톰캣 서비스가 멈춰있어야 한다. 만약 실행 중인 상태에서 이클립스에서 작업하면 포트 충돌 발생 
+-> configure tomcat -> http://localhost:8080 뜨는거 확인
+
+3. dynamic project 생성  
+jsp file 생성 후 테스트  
+ tomcat 8.0.30 with eclipse jee(ee) 로 server test 성공
+
+4. oracle database setting   
+이전 프로젝트 복기중 db 연동에서 오류가 떴었는데, 그 이유가 포트번호 에러인 것 같다. 이전 프로젝트에서 oracle 포트번호를 9090 으로 세팅했었다. 
+-----------12-27/5:36 db 세팅 전까지 작업, 테스트 완료
+
+
