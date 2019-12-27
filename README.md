@@ -21,11 +21,11 @@
 4. jsp 강의 동영상 재생기 문제가 좀 있음. 크롬으로 하면 실행 자체가 안되고 에러가 뜨고 익스플로러는 자꾸 에러 창이 뜸. 이것도 좀 많이 거슬리는 상태.
 
 # 2019-12-27 git bash 사용하기로 결정
-'''bash
-$ git init
-$ git remote add origin [url]
-$ git pull origin master
-$ git add .
-$ git commit -m 'modify file'
+~~~ bash
+$ git init  
+$ git remote add origin [url]  
+$ git pull origin master  
+$ git add .  
+$ git commit -m 'modify file'  
 $ git push origin master
-'''
+~~~
