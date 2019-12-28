@@ -20,7 +20,8 @@
 
 4. jsp 강의 동영상 재생기 문제가 좀 있음. 크롬으로 하면 실행 자체가 안되고 에러가 뜨고 익스플로러는 자꾸 에러 창이 뜸. 이것도 좀 많이 거슬리는 상태.
 
-# 2019-12-27 git bash 사용하기로 결정
+# 2019-12-27   
+유지보수 관리 용으로 git bash 사용하기로 결정
 ~~~ bash
 $ git init  
 $ git remote add origin [url]  
@@ -46,5 +47,33 @@ jsp file 생성 후 테스트
 4. oracle database setting   
 이전 프로젝트 복기중 db 연동에서 오류가 떴었는데, 그 이유가 포트번호 에러인 것 같다. 이전 프로젝트에서 oracle 포트번호를 9090 으로 세팅했었다. 
 -----------12-27/5:36 db 세팅 전까지 작업, 테스트 완료
+
+# 2019-12-28
+
+## 갑자기 tomcat server 실행이 안되는 오류 해결
+에러명 : Tomcat Server Error - Port 8080 already in use
+에러가 나는 이유 : 다른 process 가 해당 포트를 사용 중인 것이다.
+해결방법 : 관리자 권한으로 cmd를 실행한다.
+~~~ 
+> netstat -ano | findstr 8080
+> taskkill /F /pid [해당 포트를 사용하고 있는 놈 번호]
+~~~
+
+## db 오류 드디어 해결(거의 4시간 걸려서 해결)
+ping test 시 ping failed 가 계속 떴다. 이것에 대한 해결책을 드디어 찾았다.  
+1) tomcat lib 폴더에 ojdbc6.jar 파일을 넣어준다
+2) java/jdk/lib? 폴더에 ojdbc6.jar 파일을 넣어준다
+위 두 과정을 했는데도 에러가 생긴다면
+3)작업관리자 -> 서비스 목록에서    
+OrracleServiceXE, OracleXETNSListener 이 두개 서비스가 실행 중이어야 한다. 만약 실행중인데도 db 연결이 오류가 뜬다면 위 두 서비스를 재시작 해준 후 다시 연결해보면 된다. 
+
+## 현재까지 진행상황 
+### db 연동 완료  
+jsp 계정(비밀번호 jsp 로 동일)으로 eclipse 와 oracle 연동 성공  
+### 진행 상황  
+현재 index 페이지를 비롯한 전체적인 틀 만들기 완료.  
+프론트엔드에 부트스트랩을 이용하여 예쁘게 꾸밀 필요 있어 보임. 
+
+
 
 
