@@ -7,7 +7,7 @@
 <body>
 <div align="center">
 	<hr color="green" width="300">
-	<hr2>도 서 등 록 페 이 지</hr2>
+	<h2>도 서 등 록 페 이 지</h2>
 	<hr color="green" width="300">
 	<form name="insert" method="post" action="insert_ok.jsp">
 		<table border="1">
