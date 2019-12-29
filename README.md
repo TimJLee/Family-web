@@ -89,6 +89,7 @@ SQL> set line 150 /* 출력 라인 칸 수 조정 */
 SQL> select * from book;
 ~~~
 ## get,post 방식 학습 & 블로그 포스팅 
+https://timjlee.github.io/post-get/
 ## delete test
 delete.jsp, delete_ok.jsp 테스트 성공
 ## find, list 기능 추가
