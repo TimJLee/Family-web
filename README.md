@@ -97,6 +97,10 @@ delete.jsp, delete_ok.jsp 테스트 성공
 ### 오류
 주기적으로 서비스 재실행 시켜줘야 db 와 연결이 됨.(db 연결이 일정 시간 지나면 끊어지는 현상 발생. 원인을 찾고있는 중)
 
-
+# 2019-12-30
+## bootstrap 3.3.4 version 
+부트스트랩 적용해서 main 페이지 꾸미기 성공.  
+### 오류
+git pull을 하지 않고 push 를 해서 충돌발생. -> source tree 로 병합문제 해결
 
 
