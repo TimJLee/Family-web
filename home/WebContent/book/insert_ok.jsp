@@ -13,7 +13,7 @@
  	String publisher = request.getParameter("publisher");
  	String writer = request.getParameter("writer");
  	String price = request.getParameter("price");
- //  파라메터로 넘어오는 데이터는 모두 String 이다.
+ //  파라메터로 넘어오는 데이터는 모두 String 이다. 
  	if(name==null || name.trim().equals("") || publisher==null ||
  		publisher.trim().equals("") || writer==null || writer.trim().equals("")
  		|| price==null || price.trim().equals("")){%>
