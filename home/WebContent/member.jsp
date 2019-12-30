@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ include file="top.jsp" %>    
-	<!-- <link rel="stylesheet" type="text/css" href="style.css">    -->
+	<link rel="stylesheet" type="text/css" href="style.css"> 
 	<body onload="f.name.focus()">
 		<form name="f" method="POST" action="member_input.jsp">
 			<table width="600" align="center" class="outline">
