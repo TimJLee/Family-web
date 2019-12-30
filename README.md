@@ -1,5 +1,5 @@
 ﻿# jsp_project
-2년전 한 jsp project 복습 &amp; 프론트엔드 부트스트랩 이용하여 꾸미기 
+**2년전 한 jsp project 복습 &amp; 프론트엔드 부트스트랩 이용하여 꾸미기 
 
 # 이전 프로젝트 복구 시 문제점
 
@@ -62,10 +62,10 @@ jsp file 생성 후 테스트
 ## db 오류 드디어 해결(거의 4시간 걸려서 해결)
 ping test 시 ping failed 가 계속 떴다. 이것에 대한 해결책을 드디어 찾았다.  
 1) tomcat lib 폴더에 ojdbc6.jar 파일을 넣어준다
-2) java/jdk/lib? 폴더에 ojdbc6.jar 파일을 넣어준다
-위 두 과정을 했는데도 에러가 생긴다면
-3)작업관리자 -> 서비스 목록에서    
-OracleServiceXE, OracleXETNSListener 이 두개 서비스가 실행 중이어야 한다. 만약 실행중인데도 db 연결이 오류가 뜬다면 위 두 서비스를 재시작 해준 후 다시 연결해보면 된다. 
+2) java/jdk/lib? 폴더에 ojdbc6.jar 파일을 넣어준다  
+--- 위 두 과정을 했는데도 에러가 생긴다면 ---
+3) 작업관리자 -> 서비스 목록에서    
+**OracleServiceXE, OracleXETNSListener** 이 두개 서비스가 실행 중이어야 한다. 만약 실행중인데도 db 연결이 오류가 뜬다면 위 두 서비스를 재시작 해준 후 다시 연결해보면 된다. 
 
 ## 현재까지 진행상황 
 ### db 연동 완료  
@@ -75,10 +75,10 @@ jsp 계정(비밀번호 jsp 로 동일)으로 eclipse 와 oracle 연동 성공
 프론트엔드에 부트스트랩을 이용하여 예쁘게 꾸밀 필요 있어 보임. 
 
 # 2019-12-29
-## db connection test
+### db connection test
 컴퓨터를 켜서 eclipse 를 실행한 결과 또 다시 db와 연결이 안되었음(ping failed)  
 => 작업관리자/서비스 목록에서 OracleServiceXE 와 OracleXETNSListener 서비스들 재시작 시킨 후 ping 성공하였다.  
-## insert test  
+### insert test  
 insert.jsp 실행 -> db에 insert 되는지 테스트  
 ~~~
 SQL> conn jsp/jsp
@@ -88,13 +88,13 @@ SQL> col writer format a5
 SQL> set line 150 /* 출력 라인 칸 수 조정 */
 SQL> select * from book;
 ~~~
-## get,post 방식 학습 & 블로그 포스팅 
+### get,post 방식 학습 & 블로그 포스팅 
 https://timjlee.github.io/post-get/
-## delete test
+### delete test
 delete.jsp, delete_ok.jsp 테스트 성공
-## find, list 기능 추가
+### find, list 기능 추가
 수정 중. arraylist 쪽 복습 후 client에서 넘어온 데이터 값을 arraylist 로 받아서 db에 넣는 작업 해야 함. 
-## 오류
+### 오류
 주기적으로 서비스 재실행 시켜줘야 db 와 연결이 됨.(db 연결이 일정 시간 지나면 끊어지는 현상 발생. 원인을 찾고있는 중)
 
 
