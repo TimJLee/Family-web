@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="java.util.*,home.book.*"%>
-<jsp:useBean id="bdao" class="home.book.BookDAO"/>
-<!-- BookDAO bdao=new BookDAO(); -->
+    pageEncoding="EUC-KR" import="java.sql.*"%>
 <html>
 <head>
 	<title>도서목록</title>
@@ -20,22 +18,24 @@
 			<th>판매가</th>
 			<th>입고일</th>
 		</tr>
-<%	ArrayList<BookDTO> listBook=bdao.listBook();
-	if(listBook==null ||listBook.size()==0){%>
-	<tr>
-		<td colspan="5">등록된 책이 없습니다.</td>
-	</tr>
-<%	}else{
-		for(BookDTO dto : listBook){%>
-	<tr>
-		<td><%=dto.getName()%></td>
-		<td><%=dto.getWriter()%></td>
-		<td><%=dto.getPublisher()%></td>
-		<td><%=dto.getPrice()%></td>
-		<td><%=dto.getJoindate()%></td>
-	</tr>
-<%		}
-	 }%>
+<%
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	String url= "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "jsp";
+	String pass = "jsp"; 
+	String sql = "select * from book";
+	Connection con = DriverManager.getConnection(url,user,pass);
+	PreparedStatement ps = con.prepareStatement(sql);
+	ResultSet rs = ps.executeQuery();
+	while(rs.next()){%>
+ 	<tr>
+ 		<td><%=rs.getString("name")%></td>
+ 		<td><%=rs.getString("writer")%></td>
+ 		<td><%=rs.getString("publisher")%></td>
+ 		<td><%=rs.getInt("price")%></td>
+ 		<td><%=rs.getString("joindate")%></td>
+ 	</tr>
+<%	} %>
 	</table>
 </div>
 </body>

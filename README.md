@@ -103,4 +103,10 @@ delete.jsp, delete_ok.jsp 테스트 성공
 ### 오류
 git pull을 하지 않고 push 를 해서 충돌발생. -> source tree 로 병합문제 해결
 
+# 2019-12-31
+* github io 호스팅 서비스 이용하기 시도 중
+* bootstrap 더 괜찮은 테마 찾는 중
+
+### 오류
+일단 eclipse 에서 프로젝트를 run 시켜야 OracleTNSListener 가 실행이 됨을 알았다. 
 
