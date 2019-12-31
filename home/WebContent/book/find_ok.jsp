@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="java.util.*,home.book.*"%>
+    pageEncoding="EUC-KR" import="java.sql.*"%>
  
 <% 
 	request.setCharacterEncoding("EUC-KR");
@@ -18,7 +18,8 @@
 <body>
 <div align="center">
 	<hr color="green" width="300">
-	<hr2>도 서 [<%=search%>] 찾 기</hr2>
+	<h2>도 서 [<%=search%>] 찾 기</h2>
+	<a href="index.jsp">메인페이지</a>
 	<hr color="green" width="300">
 	<table border="1" width="600">
 		<tr bgcolor="yellow">
@@ -28,22 +29,31 @@
 			<th>판매가</th>
 			<th>입고일</th>
 		</tr>
-<%		ArrayList<BookDTO> findBook=bdao.findBook(search,searchString); 
-		if(findBook==null ||findBook.size()==0){%>
+<%
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	String url= "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "jsp";
+	String pass = "jsp"; 
+	String sql = "select * from book where "+search+" = ?";
+	//동적쿼리는 ?를 이용해서 데이터를 나중에 넣도록 구성.
+	//필드명은 나중에 들어갈 수 없다. -> search(필드명)는 위와 같이 String의 덧셈으로 넣어준다.
+	Connection con = DriverManager.getConnection(url,user,pass);
+	PreparedStatement ps = con.prepareStatement(sql);
+	ps.setString(1,searchString);
+	ResultSet rs = ps.executeQuery();
+	while(rs.next()){%>
 		<tr>
-			<td colspan="5">찾으시는 책이 없습니다.</td>
+			<td><%=rs.getString("name")%></td>
+			<td><%=rs.getString("writer")%></td>
+			<td><%=rs.getString("publisher")%></td>
+			<td><%=rs.getInt("price")%></td>
+			<td><%=rs.getString("joindate")%></td>
 		</tr>
-<%		}else{
-			for(BookDTO dto : findBook){%>
-		<tr>
-			<td><%=dto.getName()%></td>
-			<td><%=dto.getWriter()%></td>
-			<td><%=dto.getPublisher()%></td>
-			<td><%=dto.getPrice()%></td>
-			<td><%=dto.getJoindate()%></td>
-		</tr>
-<%		}
-	 }%>
+<%	}
+	rs.close();
+	ps.close();
+	con.close();
+%>
  	</table>
  </div>
  </body>

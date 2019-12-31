@@ -35,7 +35,12 @@
  		<td><%=rs.getInt("price")%></td>
  		<td><%=rs.getString("joindate")%></td>
  	</tr>
-<%	} %>
+<%	}
+	rs.close();
+	ps.close();
+	con.close();
+	
+	%>
 	</table>
 </div>
 </body>

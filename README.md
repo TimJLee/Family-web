@@ -104,8 +104,10 @@ delete.jsp, delete_ok.jsp 테스트 성공
 git pull을 하지 않고 push 를 해서 충돌발생. -> source tree 로 병합문제 해결
 
 # 2019-12-31
-* github io 호스팅 서비스 이용하기 시도 중
+* github io 호스팅 서비스 이용하기 시도 중 -> 정적 웹페이지만 호스팅 가능함을 알았음. jsp 와 같은 동적 웹페이지는 호스팅 불가. 유료 호스팅 업체 이용해야 함.
 * bootstrap 더 괜찮은 테마 찾는 중
+### 학습
+javabean 학습 후 블로그 포스팅
 
 ### 오류
 일단 eclipse 에서 프로젝트를 run 시켜야 OracleTNSListener 가 실행이 됨을 알았다. 

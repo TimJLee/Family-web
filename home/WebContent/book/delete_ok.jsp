@@ -17,22 +17,22 @@
  	Connection con = DriverManager.getConnection(url,user,pass);
  	PreparedStatement ps = con.prepareStatement(sql); //동적쿼리 사용
  	ps.setString(1,name);
- 	
  	int res=ps.executeUpdate();
- 	
- 	if(res>0){%>
- 	<script type="text/javascript">
- 		alert("도서삭제성공! 도서보기페이지로 이동합니다.");
- 		location.href="list.jsp";
- 	</script>
- <%	}else{ %>
- 	<script type="text/javascript">
- 		alert("도서삭제실패! 도서삭제페이지로 이동합니다.");
- 		location.href="delete.jsp";
- 	</script>
- <%	} 
+ 	String msg = null;
+ 	String href = null;
+ 	if(res>0){
+ 		msg = "도서삭제성공!! 도서보기페이지로 이동합니다.";
+ 		href="list.jsp";
+ 	}else{
+ 		msg="도서삭제실패!! 도서삭제페이지로 이동합니다.";
+ 		href="index.jsp";
+ 	}
  	ps.close();
  	con.close();
  %>
- 		
+ <script type="text/javascript">
+ 	alert("<%=msg%>")
+ 	location.href="<%=href%>"
+ </script>
+
  		
