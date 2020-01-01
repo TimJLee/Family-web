@@ -132,7 +132,7 @@ create sequence jsp_member_no;
 ```
 회원 가입 테스트 성공
 
-### 오류
+### 오류해결성공
 아직까지 5초이상 db connection 유지가 안되는 이유 찾지 못함. 주기적으로 두 개의 서비스 재실행 하면서 테스트 하는 번거로움이 있음
 ```sql
 -- 오류원인 첫번째 : tomcat 과 oracle 이 같은 포트번호(8080)을 사용하고 있었음. oracle port 9090으로 변경
@@ -157,7 +157,7 @@ SQL> conn system/oracle -- 관리자 계정 접속
 SQL> exec dbms_xdb.sethttpport(9090); -- http포트번호 바꾸기
 SQL> select dbms_xdb.gethttpport() from dual; -- 포트번호 확인하기
 SQL> create user jsp identified by jsp; -- 사용자 계정 만들기
-SQL> grant connect, resource to jsp1802; -- 계정에 권한주기
+SQL> grant connect, resource to jsp; -- 계정에 권한주기
 SQL> conn jsp/jsp -- 사용자계정으로 들어가기
 -- table 생성
 SQL> create table book
@@ -180,7 +180,7 @@ hp3 varchar2(4),
 joindate varchar2(10));
 create sequence jsp_member_no;
 ```
-**드디어 오류해결 성공하였다. 이전에 오류가 발생하였던 원인은 다음과 같이 추려진다. **
+**드디어 오류해결 성공하였다. 이전에 오류가 발생하였던 원인은 다음과 같이 추려진다.**
 1. ps.close() 등 close 코드를 넣지 않았고, 이로 인해 db에 과부하가 생김
 2. 초반에 oracle 이 사용하는 port 를 8080으로 사용하였음. 이는 tomcat 이 사용하는 port 와 같음. -> port 충돌
 3. 시스템이 처음에 부팅될 때 실행되었던 oracle.exe 실행파일은 jsp 와 연동시킨 oracle 이 아닌 학교에서 작년 9월에 사용했던 oracle db 이다. 즉, 이 녀석이 먼저 1521 port 를 차지하고 버티니까 새로 들어온 jsp 용 oracle 과의 연결이 차지할 자리가 비좁으니 tomcat 에서 이를 12초정도 후에 종료시킨 것 같다. -> 12초 정도의 연결이 성공 후 종료되는 현상
