@@ -22,7 +22,7 @@
 	<script type="text/javascript">
 		function openMember(){
 			alert('회원가입 유무 조회 페이지로 이동합니다')
-			window.open("member/memberSsn.jsp","member","width=600,height=400")
+			window.open("<%=request.getContextPath()%>/member/memberSsn.jsp","member","width=600,height=400")
 		}
 	</script>
 
@@ -48,9 +48,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.jsp">main</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">main</a></li>
             <li><a href="#about">게시판</a></li>
-            <li><a href="company.jsp">사이트소개</a></li>
+            <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">회원보기</a></li>
+            <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=FIND">회원찾기</a></li>
+            <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
             <!--<li><a href="login.jsp">로그인</a></li>-->
           </ul>
           <form class="navbar-form navbar-right">

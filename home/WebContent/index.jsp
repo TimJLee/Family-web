@@ -29,7 +29,7 @@
 				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
 				magna mollis euismod. Donec sed odio dui.</p>
 			<p>
-				<a class="btn btn-default" href="book/index.jsp" role="button">View
+				<a class="btn btn-default" href="<%=request.getContextPath()%>/book/index.jsp" role="button">View
 					details >></a>
 			</p>
 		</div>

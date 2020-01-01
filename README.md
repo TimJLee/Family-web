@@ -134,3 +134,54 @@ create sequence jsp_member_no;
 
 ### 오류
 아직까지 5초이상 db connection 유지가 안되는 이유 찾지 못함. 주기적으로 두 개의 서비스 재실행 하면서 테스트 하는 번거로움이 있음
+```sql
+-- 오류원인 첫번째 : tomcat 과 oracle 이 같은 포트번호(8080)을 사용하고 있었음. oracle port 9090으로 변경
+SQL> conn /as sysdba
+SQL> select dbms_xdb.gethttpport() from dual;
+SQL> exec dbms_xdb.sethttpport(9090);
+-- 위와 같이 한 후 다시 해보니 이번엔 ORA-12519 error 발생. 
+-- 검색해보니 프로세스 할당 수를 늘려주면 해결이 된다는 사례가 많아서 시도해봄. 
+SQL> alter system set processes=500 scope=spfile;
+SQL> shutdown immediate;
+SQL> startup;
+SQL> SELECT * FROM v$resource_limit WHERE resource_name IN ('processes','sessions');
+-- 이것까지 해보았으나 12초정도 지나고 db와의 연결이 끊어지는 문제는 계속 발생함.
+```  
+
+기존 학교 db project 용으로 설치하고 사용한 oracle 과 충돌이 있었을 수 도 있으므로 이를 삭제 후에 다음과 같이 진행하였다.  
+jsp와 연동했던 oracle 11g 삭제 후 재설치
+C:\oraclexe\app\oracle\product\11.2.0\server\bin 경로에서
+sqlplus.exe 실행
+``` sql
+SQL> conn system/oracle -- 관리자 계정 접속
+SQL> exec dbms_xdb.sethttpport(9090); -- http포트번호 바꾸기
+SQL> select dbms_xdb.gethttpport() from dual; -- 포트번호 확인하기
+SQL> create user jsp identified by jsp; -- 사용자 계정 만들기
+SQL> grant connect, resource to jsp1802; -- 계정에 권한주기
+SQL> conn jsp/jsp -- 사용자계정으로 들어가기
+-- table 생성
+SQL> create table book
+(name varchar2(20),
+writer varchar2(20),
+publisher varchar2(30),
+price number,
+joindate varchar2(10));
+SQL> create table jsp_member
+(no number primary key,
+name varchar2(20) not null,
+id varchar2(15) not null,
+passwd varchar2(10) not null,
+ssn1 varchar2(6) not null,
+ssn2 varchar2(7) not null,
+email varchar2(30),
+hp1 varchar2(3),
+hp2 varchar2(4),
+hp3 varchar2(4),
+joindate varchar2(10));
+create sequence jsp_member_no;
+```
+**드디어 오류해결 성공하였다. 이전에 오류가 발생하였던 원인은 다음과 같이 추려진다. **
+1. ps.close() 등 close 코드를 넣지 않았고, 이로 인해 db에 과부하가 생김
+2. 초반에 oracle 이 사용하는 port 를 8080으로 사용하였음. 이는 tomcat 이 사용하는 port 와 같음. -> port 충돌
+3. 시스템이 처음에 부팅될 때 실행되었던 oracle.exe 실행파일은 jsp 와 연동시킨 oracle 이 아닌 학교에서 작년 9월에 사용했던 oracle db 이다. 즉, 이 녀석이 먼저 1521 port 를 차지하고 버티니까 새로 들어온 jsp 용 oracle 과의 연결이 차지할 자리가 비좁으니 tomcat 에서 이를 12초정도 후에 종료시킨 것 같다. -> 12초 정도의 연결이 성공 후 종료되는 현상
+4. max process 할당값을 500으롤 변경 -> 이 해결법 같은 경우에는 나중에 jsp_project  를 웹 호스팅 했을 시 다른 사용자들 여러명이 db에 접속하여 발생될 수 있는 오류 일 것 같으니 정리해둔다. 이번 오류의 원인은 아닌 것 같다.
