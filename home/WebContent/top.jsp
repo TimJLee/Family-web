@@ -19,7 +19,12 @@
     <!-- Custom styles for this template -->
     <link href="bootstrap-3.3.2/jumbotron/sticky-footer.css" rel="stylesheet">
     <link href="bootstrap-3.3.2/jumbotron/jumbotron.css" rel="stylesheet">
-	
+	<script type="text/javascript">
+		function openMember(){
+			alert('회원가입 유무 조회 페이지로 이동합니다')
+			window.open("member/memberSsn.jsp","member","width=600,height=400")
+		}
+	</script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

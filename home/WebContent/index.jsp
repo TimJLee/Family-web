@@ -13,7 +13,7 @@
 			supporting pieces of content. Use it as a starting point to create
 			something more unique.</p>
 		<p>
-			<a class="btn btn-primary btn-lg" href="member.jsp" role="button">회원가입
+			<a class="btn btn-primary btn-lg" href="javascript:openMember()" role="button">회원가입
 				>></a>
 		</p>
 	</div>

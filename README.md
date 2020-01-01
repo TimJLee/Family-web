@@ -112,3 +112,25 @@ javabean 학습 후 블로그 포스팅
 ### 오류
 일단 eclipse 에서 프로젝트를 run 시켜야 OracleTNSListener 가 실행이 됨을 알았다. 
 
+# 2020-01-01
+## 회원가입유무 페이지 추가
+db에 새 테이블 추가
+```sql
+create table jsp_member
+(no number primary key,
+name varchar2(20) not null,
+id varchar2(15) not null,
+passwd varchar2(10) not null,
+ssn1 varchar2(6) not null,
+ssn2 varchar2(7) not null,
+email varchar2(30),
+hp1 varchar2(3),
+hp2 varchar2(4),
+hp3 varchar2(4),
+joindate varchar2(10));
+create sequence jsp_member_no;
+```
+회원 가입 테스트 성공
+
+### 오류
+아직까지 5초이상 db connection 유지가 안되는 이유 찾지 못함. 주기적으로 두 개의 서비스 재실행 하면서 테스트 하는 번거로움이 있음
