@@ -6,13 +6,13 @@
 </head>
 <body>
 	<div align="center">
-		<table border="0" width="700">
+		<table border="0" width="1000">
 			<tr>
 				<th><a href="insert.jsp">도서등록</a></th>
 				<th><a href="list.jsp">도서보기</a></th>
 				<th><a href="find.jsp">도서검색</a></th>
 				<th><a href="delete.jsp">도서삭제</a></th>
-				<th><a href="">도서수정</a></th>
+				<th><a href="update.jsp">도서수정</a></th>
 			</tr>
 			<tr>
 				<td></td>

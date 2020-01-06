@@ -7,9 +7,9 @@
 <body>
 <div align="center">
 <hr color="green" width="300">
-	<h2>도 서 찾 기 페 이 지</h2>
+	<h2>도 서 수 정 페 이 지</h2>
 	<hr color="green" width="300">
-	<form name="find" method="post" action="find_ok.jsp">
+	<form name="update" method="post" action="update_ok.jsp">
 		<table border="1">
 			<tr>
 				<td>

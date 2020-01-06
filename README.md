@@ -185,3 +185,22 @@ create sequence jsp_member_no;
 2. 초반에 oracle 이 사용하는 port 를 8080으로 사용하였음. 이는 tomcat 이 사용하는 port 와 같음. -> port 충돌
 3. 시스템이 처음에 부팅될 때 실행되었던 oracle.exe 실행파일은 jsp 와 연동시킨 oracle 이 아닌 학교에서 작년 9월에 사용했던 oracle db 이다. 즉, 이 녀석이 먼저 1521 port 를 차지하고 버티니까 새로 들어온 jsp 용 oracle 과의 연결이 차지할 자리가 비좁으니 tomcat 에서 이를 12초정도 후에 종료시킨 것 같다. -> 12초 정도의 연결이 성공 후 종료되는 현상
 4. max process 할당값을 500으롤 변경 -> 이 해결법 같은 경우에는 나중에 jsp_project  를 웹 호스팅 했을 시 다른 사용자들 여러명이 db에 접속하여 발생될 수 있는 오류 일 것 같으니 정리해둔다. 이번 오류의 원인은 아닌 것 같다.
+
+# 2020-01-06
+
+## 한글 9글자 -> 27로 인식. book coulmn (name)  크기 변경 20 -> 30
+alter table book
+  2  modify name varchar2(30);
+
+## 창 띄우기 변경
+
+- 현재탭으로 열기
+<input type="button" value="수정" onClick="location.href='http://www.daum.net'">
+
+- 새로운 탭으로 열기
+<input type="button" value="버튼" onClick="window.open('http://www.daum.net')">
+
+
+## 도서수정 페이지 완성 - 테스트 성공
+
+## scope 속성 학습

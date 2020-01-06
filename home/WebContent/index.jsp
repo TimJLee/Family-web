@@ -24,32 +24,25 @@
 	<div class="row">
 		<div class="col-md-4">
 			<h2>도서관리 프로그램</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
+			<p> 내가 읽은 책을 등록하고, 수정하고, 삭제하고, 검색할 수 있습니다. 이 기능은 회원가입 후에 이용 하실 수 있습니다. 어서 회원가입 후
+			나만의 도서관리 프로그램을 이용해 보세요! 자신이 읽은 책들의 기록을 살펴보면서 더 나은 독서 생활 습관을 위한 동기부여가 되어 줄 것입니다!
+			차후 빅데이터를 이용하여 고객 맞춤 책 추천 서비스를 도입 예정입니다. </p>
 			<p>
-				<a class="btn btn-default" href="<%=request.getContextPath()%>/book/index.jsp" role="button">View
-					details >></a>
+				<a class="btn btn-default" href="javascript:openBook()" role="button">시작하기
+					 </a>
 			</p>
 		</div>
 		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
+			<h2>회원관리 프로그램(개설중)</h2>
+			<p>킹재용만 이용할 수 있는 페이지 입니다. 아직 개설중 입니다. </p>
 			<p>
 				<a class="btn btn-default" href="#" role="button">View details
 					>></a>
 			</p>
 		</div>
 		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-				egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-				Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-				nibh, ut fermentum massa justo sit amet risus.</p>
+			<h2>지도기반 sns</h2>
+			<p>개설중</p>
 			<p>
 				<a class="btn btn-default" href="#" role="button">View details
 					>></a>

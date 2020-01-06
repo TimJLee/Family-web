@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR" import="java.util.*, home.member.*"%>
-<%@ include file="../top.jsp"%>
+
 <link rel="stylesheet" type="text/css" href="../style.css">
 <jsp:useBean id="mbdao" class="home.member.MemberDAO" />
 <%-- 
@@ -80,7 +80,7 @@
 		%>
 	</table>
 </div>
-<%@ include file="../bottom.jsp"%>
+
 
 
 

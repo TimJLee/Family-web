@@ -97,7 +97,29 @@ public class BookDAO {
 		}
 	}
 	
-	
+	public int updateBook(BookDTO dto)throws SQLException{
+		int res=updateBook(dto.getName(),dto.getPublisher(),dto.getWriter(),dto.getPrice(),dto.getJoindate());
+		return res;
+	}
+	public int updateBook(String name,String publisher,String writer,int price,String joindate) throws SQLException{
+		String sql="update book set writer=? , publisher=? , price=? , joindate=? where name=?";
+		try {
+			con=DriverManager.getConnection(url,user,pass);
+			ps=con.prepareStatement(sql);
+		
+			ps.setString(1, writer);
+			ps.setString(2, publisher);
+			ps.setInt(3,price);
+			ps.setString(4, joindate);
+			ps.setString(5, name);
+			int res=ps.executeUpdate();
+			return res;
+		}finally {
+			if(ps!=null)ps.close();
+			if(con!=null)con.close();
+		}
+		
+	}
 	
 	
 }

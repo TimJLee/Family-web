@@ -19,6 +19,23 @@ public class MemberDAO {
 		user = "jsp";
 		pass = "jsp";
 	}
+	
+	private String search, searchString;
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public String getSearchString() {
+		return searchString;
+	}
+
+	public void setSearchString(String searchString) {
+		this.searchString = searchString;
+	}
 
 	public boolean checkMember(String name, String ssn1, String ssn2) throws SQLException {
 		String sql = "select * from jsp_member where ssn1=? and ssn2=?";
@@ -161,12 +178,13 @@ public class MemberDAO {
 	}
 
 	public List<MemberDTO> findMember() throws SQLException {
+		String sql = "select * from jsp_member where "+search+" = ?";
 		try {
 			con = DriverManager.getConnection(url, user, pass);
-			String sql = "select * from jsp_member where " + search + " = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, searchString);
 			rs = ps.executeQuery();
+			
 			return makeList(rs);
 		} finally {
 			if (rs != null)

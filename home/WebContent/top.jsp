@@ -25,7 +25,12 @@
 			window.open("<%=request.getContextPath()%>/member/memberSsn.jsp","member","width=600,height=400")
 		}
 	</script>
-
+	<script type="text/javascript">
+		function openBook(){
+			alert('도서관리 페이지로 이동합니다')
+			window.open("<%=request.getContextPath()%>/book/index.jsp","book","width=1000,height=600")
+		}
+	</script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -63,6 +68,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
+           </form>
         </div><!--/.nav-collapse -->
 
 <!-- 

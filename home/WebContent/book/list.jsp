@@ -12,7 +12,7 @@
 	<h2>도 서 목 록 보 기</h2>  
 	<a href="index.jsp">메인페이지</a>
 	<hr color="green" width="300">
-	<table border="1" width="600">
+	<table border="1" width="1000">
 		<tr bgcolor="yellow">
 			<th>책이름</th>
 			<th>지은이</th>
