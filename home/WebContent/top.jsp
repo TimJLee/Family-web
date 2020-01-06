@@ -39,7 +39,14 @@
   </head>
 
   <body>
-
+	<%
+		boolean isLogin = false;
+		String loginId = (String)session.getAttribute("id");
+		if(loginId != null && !(loginId.trim().equals(""))){
+			isLogin = true;
+		}
+	
+	%>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -58,7 +65,11 @@
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">회원보기</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=FIND">회원찾기</a></li>
             <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
-            <!--<li><a href="login.jsp">로그인</a></li>-->
+            <%if(isLogin){ %>
+             <li><a href="<%=request.getContextPath()%>/login/logout.jsp">로그아웃</a></li>
+            <%}else{ %>
+            <li><a href="<%=request.getContextPath()%>/login/login.jsp">로그인</a></li>
+            <%} %>
           </ul>
           <form class="navbar-form navbar-right">
             <div class="form-group">

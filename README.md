@@ -188,11 +188,11 @@ create sequence jsp_member_no;
 
 # 2020-01-06
 
-## 한글 9글자 -> 27로 인식. book coulmn (name)  크기 변경 20 -> 30
+### 한글 9글자 -> 27로 인식. book coulmn (name)  크기 변경 20 -> 30
 alter table book
   2  modify name varchar2(30);
 
-## 창 띄우기 변경
+### 창 띄우기 변경
 
 - 현재탭으로 열기
 ~~~ html
@@ -205,6 +205,8 @@ alter table book
 ~~~
 
 
-## 도서수정 페이지 완성 - 테스트 성공
+### 도서수정 페이지 완성 - 테스트 성공
 
-## scope 속성 학습
+### scope 속성 학습
+
+### session, cookie 이용하여 login, logout, 아이디 기억하기 기능 구현

@@ -7,7 +7,7 @@
 <body>
   <div align="center">
     <hr color="green" width="300">
-    <h2>Page scope test</h2>
+    <h2>Request scope test</h2>
     <hr color="green" width="300">
     <form name="f" action="scope1.jsp" method="post">
           °ª : <input type="text" name="count"><input type="submit" value="Àü¼Û">
