@@ -195,10 +195,14 @@ alter table book
 ## 창 띄우기 변경
 
 - 현재탭으로 열기
+~~~ html
 <input type="button" value="수정" onClick="location.href='http://www.daum.net'">
+~~~
 
 - 새로운 탭으로 열기
+~~~ html
 <input type="button" value="버튼" onClick="window.open('http://www.daum.net')">
+~~~
 
 
 ## 도서수정 페이지 완성 - 테스트 성공
