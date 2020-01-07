@@ -1,4 +1,4 @@
-﻿# jsp_project
+﻿# jsp_project - front1 test
 **2년전 한 jsp project 복습 &amp; 프론트엔드 부트스트랩 이용하여 꾸미기**
 
 # 이전 프로젝트 복구 시 문제점
