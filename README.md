@@ -214,3 +214,16 @@ alter table book
 
 # 2020-01-07
 ### 회원 수정, 삭제 기능 구현 성공
+### branch 3개 생성
+git branch my-idea
+git branch
+git checkout my-idea // my-idea branch 로 작업스페이스 변경
+git checkout master // master 로 돌아가기 
+git checkout my-idea
+git branch my-anoter-idea // my-idea 상태를 그대로 가져간 anoter-idea
+git checkout master 
+git merge my-another-idea // my-idea 의 상태를 포함한 another-idea 를 master 로 병합
+**각 브랜치 역할**
+front1 - 캐러셀 => yeean 이 작업<br>
+front2 - 로그인 화면 먼저 => jaeeyo 이 작업<Br>
+front3 - 이미지 크게 => tim 이 작업
