@@ -225,8 +225,8 @@ git branch front2 // front1 상태를 그대로 가져간 front2 branch
 git checkout master 
 git merge front2 // front1 의 상태를 포함한 front2 를 master 로 병합
 ~~~
-<Br>
-**각 브랜치 역할**<Br>
+<br>
+**각 브랜치 역할**<br>
 front1 - 캐러셀 => yeean 이 작업<br>
 front2 - 로그인 화면 먼저 => jaeeyo 이 작업<Br>
 front3 - 이미지 크게 => tim 이 작업
