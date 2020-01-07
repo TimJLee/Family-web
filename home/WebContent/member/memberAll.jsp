@@ -70,7 +70,7 @@
 			<td align="center"><%=dto.getAllHp()%></td>
 			<td align="center"><%=dto.getJoindate()%></td>
 			<td align="center"><a
-				href="member_update.jsp?no=<%=dto.getNo()%>">수정</a> | <a
+				href="member_edit.jsp?no=<%=dto.getNo()%>">수정</a> | <a
 				href="member_delete.jsp?no=<%=dto.getNo()%>">삭제</a></td>
 		</tr>
 

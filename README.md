@@ -211,3 +211,6 @@ alter table book
 ### scope 속성 학습
 
 ### session, cookie 이용하여 login, logout, 아이디 기억하기 기능 구현
+
+# 2020-01-07
+### 회원 수정, 삭제 기능 구현 성공

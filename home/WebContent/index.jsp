@@ -7,14 +7,11 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational
-			website. It includes a large callout called a jumbotron and three
-			supporting pieces of content. Use it as a starting point to create
-			something more unique.</p>
+		<h1>Welcome!</h1>
+		<p>Bootstrap 3.3.2 ver 과 Jsp 를 이용하여 만든 반응형 동적 웹 사이트 프로젝트 </p>
 		<p>
 			<a class="btn btn-primary btn-lg" href="javascript:openMember()" role="button">회원가입
-				>></a>
+				</a>
 		</p>
 	</div>
 </div>
@@ -36,16 +33,16 @@
 			<h2>회원관리 프로그램(개설중)</h2>
 			<p>킹재용만 이용할 수 있는 페이지 입니다. 아직 개설중 입니다. </p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					>></a>
+				<a class="btn btn-default" href="#" role="button">시작하기
+					</a>
 			</p>
 		</div>
 		<div class="col-md-4">
 			<h2>지도기반 sns</h2>
 			<p>개설중</p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					>></a>
+				<a class="btn btn-default" href="#" role="button">시작하기
+					</a>
 			</p>
 		</div>
 	</div>

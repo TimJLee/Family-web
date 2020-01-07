@@ -56,11 +56,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">jsp-project</a>
+          <a class="navbar-brand" href="#">TOPCIT</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">main</a></li>
+            <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">메인</a></li>
             <li><a href="#about">게시판</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">회원보기</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=FIND">회원찾기</a></li>
@@ -73,12 +73,12 @@
           </ul>
           <form class="navbar-form navbar-right">
             <div class="form-group">
-              <input type="text" placeholder="id" class="form-control">
+              <input type="text" placeholder="이메일" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="비밀번호" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" class="btn btn-success">로그인</button>
            </form>
         </div><!--/.nav-collapse -->
 
