@@ -226,7 +226,7 @@ git checkout master
 git merge front2 // front1 의 상태를 포함한 front2 를 master 로 병합
 ~~~
 <br>
-**각 브랜치 역할**<br>
+<b>각 브랜치 역할</b><br>
 front1 - 캐러셀 => yeean 이 작업<br>
 front2 - 로그인 화면 먼저 => jaeeyo 이 작업<Br>
 front3 - 이미지 크게 => tim 이 작업
