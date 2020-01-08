@@ -1,4 +1,4 @@
-﻿# jsp_project
+﻿# jsp_project - front1 test
 **2년전 한 jsp project 복습 &amp; 프론트엔드 부트스트랩 이용하여 꾸미기**
 
 # 이전 프로젝트 복구 시 문제점
@@ -37,7 +37,7 @@ $ git push origin master
 에서 apache-tomcat-8.0.30.exe  다운로드 (windows 32/64 용)
 * 서버가 자주 바뀐다면 통 파일(zip) 다운하면 됨. 나는 설치에 의의를 두므로 실행파일 다운하였음. 
 
-2. C:\Tomcat 8.0 - 톰캑 설치 경로 이걸로 바꾸기
+2. C:\Tomcat 8.0 - 톰캣 설치 경로 이걸로 바꾸기
 이때 톰캣 서비스가 멈춰있어야 한다. 만약 실행 중인 상태에서 이클립스에서 작업하면 포트 충돌 발생 
 -> configure tomcat -> http://localhost:8080 뜨는거 확인
 
@@ -215,6 +215,7 @@ alter table book
 # 2020-01-07
 ### 회원 수정, 삭제 기능 구현 성공
 ### branch 3개 생성
+
 ~~~ bash
 git branch front1
 git branch
@@ -240,3 +241,4 @@ master 로 일단 진행
 top.jsp 상단 우측에 로그인 기능 추가 완료<br>
 로그인 실패시 login.jsp 로 넘어가도록 설정 완료.<br>
 로그인 페이지 기능으로 비밀번호 찾기, 아이디 찾기 기능 추가 완료
+

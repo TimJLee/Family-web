@@ -30,7 +30,7 @@
 			</p>
 		</div>
 		<div class="col-md-4">
-			<h2>회원관리 프로그램(개설중)</h2>
+			<h2>회원관리 프로그램(개설중) - front1 test</h2>
 			<p>킹재용만 이용할 수 있는 페이지 입니다. 아직 개설중 입니다. </p>
 			<p>
 				<a class="btn btn-default" href="#" role="button">시작하기
