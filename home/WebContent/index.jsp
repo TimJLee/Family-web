@@ -2,15 +2,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="top.jsp"%>
-<!-- ÅÛÇÃ¸´ ÆäÀÌÁöÀÇ ¸ðµç ¼Ò½º¸¦ °¡Á®¿Â´Ù. -->
+<!-- í…œí”Œë¦¿ íŽ˜ì´ì§€ì˜ ëª¨ë“  ì†ŒìŠ¤ë¥¼ ê°€ì ¸ì˜¨ë‹¤. -->
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
 		<h1>Welcome!</h1>
-		<p>Bootstrap 3.3.2 ver °ú Jsp ¸¦ ÀÌ¿ëÇÏ¿© ¸¸µç ¹ÝÀÀÇü µ¿Àû À¥ »çÀÌÆ® ÇÁ·ÎÁ§Æ® </p>
+		<p>Bootstrap 3.3.2 ver ê³¼ Jsp ë¥¼ ì´ìš©í•˜ì—¬ ë§Œë“  ë°˜ì‘í˜• ë™ì  ì›¹ ì‚¬ì´íŠ¸ í”„ë¡œì íŠ¸ </p>
 		<p>
-			<a class="btn btn-primary btn-lg" href="javascript:openMember()" role="button">È¸¿ø°¡ÀÔ
+			<a class="btn btn-primary btn-lg" href="javascript:openMember()" role="button">íšŒì›ê°€ìž…
 				</a>
 		</p>
 	</div>
@@ -20,28 +20,28 @@
 	<!-- Example row of columns -->
 	<div class="row">
 		<div class="col-md-4">
-			<h2>µµ¼­°ü¸® ÇÁ·Î±×·¥</h2>
-			<p> ³»°¡ ÀÐÀº Ã¥À» µî·ÏÇÏ°í, ¼öÁ¤ÇÏ°í, »èÁ¦ÇÏ°í, °Ë»öÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ±â´ÉÀº È¸¿ø°¡ÀÔ ÈÄ¿¡ ÀÌ¿ë ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù. ¾î¼­ È¸¿ø°¡ÀÔ ÈÄ
-			³ª¸¸ÀÇ µµ¼­°ü¸® ÇÁ·Î±×·¥À» ÀÌ¿ëÇØ º¸¼¼¿ä! ÀÚ½ÅÀÌ ÀÐÀº Ã¥µéÀÇ ±â·ÏÀ» »ìÆìº¸¸é¼­ ´õ ³ªÀº µ¶¼­ »ýÈ° ½À°üÀ» À§ÇÑ µ¿±âºÎ¿©°¡ µÇ¾î ÁÙ °ÍÀÔ´Ï´Ù!
-			Â÷ÈÄ ºòµ¥ÀÌÅÍ¸¦ ÀÌ¿ëÇÏ¿© °í°´ ¸ÂÃã Ã¥ ÃßÃµ ¼­ºñ½º¸¦ µµÀÔ ¿¹Á¤ÀÔ´Ï´Ù. </p>
+			<h2>ë„ì„œê´€ë¦¬ í”„ë¡œê·¸ëž¨</h2>
+			<p> ë‚´ê°€ ì½ì€ ì±…ì„ ë“±ë¡í•˜ê³ , ìˆ˜ì •í•˜ê³ , ì‚­ì œí•˜ê³ , ê²€ìƒ‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ê¸°ëŠ¥ì€ íšŒì›ê°€ìž… í›„ì— ì´ìš© í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì–´ì„œ íšŒì›ê°€ìž… í›„
+			ë‚˜ë§Œì˜ ë„ì„œê´€ë¦¬ í”„ë¡œê·¸ëž¨ì„ ì´ìš©í•´ ë³´ì„¸ìš”! ìžì‹ ì´ ì½ì€ ì±…ë“¤ì˜ ê¸°ë¡ì„ ì‚´íŽ´ë³´ë©´ì„œ ë” ë‚˜ì€ ë…ì„œ ìƒí™œ ìŠµê´€ì„ ìœ„í•œ ë™ê¸°ë¶€ì—¬ê°€ ë˜ì–´ ì¤„ ê²ƒìž…ë‹ˆë‹¤!
+			ì°¨í›„ ë¹…ë°ì´í„°ë¥¼ ì´ìš©í•˜ì—¬ ê³ ê° ë§žì¶¤ ì±… ì¶”ì²œ ì„œë¹„ìŠ¤ë¥¼ ë„ìž… ì˜ˆì •ìž…ë‹ˆë‹¤. </p>
 			<p>
-				<a class="btn btn-default" href="javascript:openBook()" role="button">½ÃÀÛÇÏ±â
+				<a class="btn btn-default" href="javascript:openBook()" role="button">ì‹œìž‘í•˜ê¸°
 					 </a>
 			</p>
 		</div>
 		<div class="col-md-4">
-			<h2>È¸¿ø°ü¸® ÇÁ·Î±×·¥(°³¼³Áß) - front1 test</h2>
-			<p>Å·Àç¿ë¸¸ ÀÌ¿ëÇÒ ¼ö ÀÖ´Â ÆäÀÌÁö ÀÔ´Ï´Ù. ¾ÆÁ÷ °³¼³Áß ÀÔ´Ï´Ù. </p>
+			<h2>íšŒì›ê´€ë¦¬ í”„ë¡œê·¸ëž¨(ê°œì„¤ì¤‘)</h2>
+			<p>í‚¹ìž¬ìš©ë§Œ ì´ìš©í•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ ìž…ë‹ˆë‹¤. ì•„ì§ ê°œì„¤ì¤‘ ìž…ë‹ˆë‹¤. </p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">½ÃÀÛÇÏ±â
+				<a class="btn btn-default" href="#" role="button">ì‹œìž‘í•˜ê¸°
 					</a>
 			</p>
 		</div>
 		<div class="col-md-4">
-			<h2>Áöµµ±â¹Ý sns</h2>
-			<p>°³¼³Áß</p>
+			<h2>ì§€ë„ê¸°ë°˜ sns</h2>
+			<p>ê°œì„¤ì¤‘</p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">½ÃÀÛÇÏ±â
+				<a class="btn btn-default" href="#" role="button">ì‹œìž‘í•˜ê¸°
 					</a>
 			</p>
 		</div>
@@ -49,8 +49,8 @@
 </div> <!-- /container -->
 	<!--  
 	<ul>
-		<li><h2><a href="book/index.jsp">µµ¼­°ü¸® ÇÁ·Î±×·¥</a></h2>
+		<li><h2><a href="book/index.jsp">ë„ì„œê´€ë¦¬ í”„ë¡œê·¸ëž¨</a></h2>
 	</ul>
 	-->
 	<%@ include file="bottom.jsp"%>
-	<!-- ÅÛÇÃ¸´ ÆäÀÌÁö  ¸ðµç ¼Ò½º¸¦ °¡Á®¿Â´Ù.-->
+	<!-- í…œí”Œë¦¿ íŽ˜ì´ì§€  ëª¨ë“  ì†ŒìŠ¤ë¥¼ ê°€ì ¸ì˜¨ë‹¤.-->
