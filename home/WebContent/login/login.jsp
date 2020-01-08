@@ -17,6 +17,10 @@
 		}
 		document.f.submit();
 	}
+	function openMember(){
+		alert('회원가입 유무 조회 페이지로 이동합니다')
+		window.open("<%=request.getContextPath()%>/member/memberSsn.jsp","member","width=600,height=400")
+	}
 	function searchMember(mode){
 		window.open("<%=request.getContextPath()%>/login/search.jsp?mode="+mode,
 			"search", "width=600, height=450")
@@ -80,9 +84,15 @@
 		</tr>
 		<tr>
 			<td colspan="3" align="center">
-					<img src="../img/bt_join.gif" width="60" height="22" alt="회원가입">
- 					<img src="../img/bt_search_id.gif" width="60" height="22" alt="아이디 찾기">
-					<img src="../img/bt_search_pw.gif" width="60" height="22" alt="비밀번호 찾기">
+				<a href="javascript:openMember()">
+					<img src="../img/bt_join.gif" width="60" height="22" border="0" alt="회원가입">
+ 				</a>	
+ 				<a href="javascript:searchMember('id')">
+ 					<img src="../img/bt_search_id.gif" border="0" width="60" height="22" alt="아이디 찾기">
+ 				</a>	
+ 				<a href="javascript:searchMember('pw')">
+					<img src="../img/bt_search_pw.gif" border="0" width="60" height="22" alt="비밀번호 찾기">
+				</a>
 								
 			</td>
 		</tr>

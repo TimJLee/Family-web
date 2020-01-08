@@ -37,7 +37,7 @@ $ git push origin master
 에서 apache-tomcat-8.0.30.exe  다운로드 (windows 32/64 용)
 * 서버가 자주 바뀐다면 통 파일(zip) 다운하면 됨. 나는 설치에 의의를 두므로 실행파일 다운하였음. 
 
-2. C:\Tomcat 8.0 - 톰캑 설치 경로 이걸로 바꾸기
+2. C:\Tomcat 8.0 - 톰캣 설치 경로 이걸로 바꾸기
 이때 톰캣 서비스가 멈춰있어야 한다. 만약 실행 중인 상태에서 이클립스에서 작업하면 포트 충돌 발생 
 -> configure tomcat -> http://localhost:8080 뜨는거 확인
 
@@ -215,15 +215,30 @@ alter table book
 # 2020-01-07
 ### 회원 수정, 삭제 기능 구현 성공
 ### branch 3개 생성
-git branch my-idea
+
+~~~ bash
+git branch front1
 git branch
-git checkout my-idea // my-idea branch 로 작업스페이스 변경
+git checkout front1 // front1 branch 로 작업스페이스 변경
 git checkout master // master 로 돌아가기 
-git checkout my-idea
-git branch my-anoter-idea // my-idea 상태를 그대로 가져간 anoter-idea
+git checkout front1
+git branch front2 // front1 상태를 그대로 가져간 front2 branch
 git checkout master 
-git merge my-another-idea // my-idea 의 상태를 포함한 another-idea 를 master 로 병합
-**각 브랜치 역할**
+git merge front2 // front1 의 상태를 포함한 front2 를 master 로 병합
+~~~
+<br>
+<b>각 브랜치 역할</b><br>
 front1 - 캐러셀 => yeean 이 작업<br>
 front2 - 로그인 화면 먼저 => jaeeyo 이 작업<Br>
 front3 - 이미지 크게 => tim 이 작업
+
+# 2020-01-08
+### 각 브랜치 의미
+front3 - db connection pool 사용하기 직전까지의 버전
+master 로 일단 진행
+### 인증 기능 추가 완료
+도서관리 프로그램은 로그인한 사용자만 들어갈 수 있게 업데이트 완료<br>
+top.jsp 상단 우측에 로그인 기능 추가 완료<br>
+로그인 실패시 login.jsp 로 넘어가도록 설정 완료.<br>
+로그인 페이지 기능으로 비밀번호 찾기, 아이디 찾기 기능 추가 완료
+

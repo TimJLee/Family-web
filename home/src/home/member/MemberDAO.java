@@ -2,15 +2,28 @@ package home.member;
 
 import java.sql.*;
 import java.util.*;
+import javax.sql.*;
+import javax.naming.*;
 
 public class MemberDAO {
 	Connection con;
 	PreparedStatement ps;
 	ResultSet rs;
-
-	String url, user, pass;
+	
+	static DataSource ds;
+	static {
+		try {
+			Context init = new InitialContext();
+			ds = (DataSource)init.lookup("java:comp/env/jdbc/oracle"); //object 형태로 반환되므로 형변환 필요
+			// java:comp/env => web.xml 로 감. res-ref-name 을 뒤에 명시
+		}catch(NamingException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+	//String url, user, pass;
 
 	public MemberDAO() {
+		/*
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -18,6 +31,7 @@ public class MemberDAO {
 		url = "jdbc:oracle:thin:@localhost:1521:xe";
 		user = "jsp";
 		pass = "jsp";
+		*/
 	}
 	
 	private String search, searchString;
@@ -40,7 +54,7 @@ public class MemberDAO {
 	public boolean checkMember(String name, String ssn1, String ssn2) throws SQLException {
 		String sql = "select * from jsp_member where ssn1=? and ssn2=?";
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, ssn1);
 			ps.setString(2, ssn2);
@@ -62,7 +76,7 @@ public class MemberDAO {
 	public int insertMember(MemberDTO dto) throws SQLException {
 		String sql = "insert into jsp_member values(jsp_member_no.nextval, ?,?,?,?,?,?,?,?,?,sysdate)";
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getId());
@@ -85,7 +99,7 @@ public class MemberDAO {
 
 	public List<MemberDTO> listMember() throws SQLException {
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			String sql = "select * from jsp_member";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -123,7 +137,7 @@ public class MemberDAO {
 
 	public int deleteMember(int no) throws SQLException {
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			String sql = "delete from jsp_member where no = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, no);
@@ -139,7 +153,7 @@ public class MemberDAO {
 
 	public MemberDTO getMember(int no) throws SQLException {
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			String sql = "select * from jsp_member where no=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, no);
@@ -158,7 +172,7 @@ public class MemberDAO {
 
 	public int updateMember(MemberDTO dto) throws SQLException {
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			String sql = "update jsp_member set " + "passwd=?, email=?, hp1=?, hp2=?, hp3=? where no = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getPasswd());
@@ -180,7 +194,7 @@ public class MemberDAO {
 	public List<MemberDTO> findMember() throws SQLException {
 		String sql = "select * from jsp_member where "+search+" = ?";
 		try {
-			con = DriverManager.getConnection(url, user, pass);
+			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, searchString);
 			rs = ps.executeQuery();
@@ -195,4 +209,49 @@ public class MemberDAO {
 				con.close();
 		}
 	}
+	
+	public String searchId(String name, String ssn1, String ssn2) throws SQLException{
+		String sql = "select id from jsp_member where name=? and ssn1=? and ssn2=?";
+		try{
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, ssn1);
+			ps.setString(3, ssn2);
+			rs = ps.executeQuery();
+			if (rs.next()){
+				String msg = rs.getString(1);
+				return msg;
+			}
+			return null;
+		}finally{
+			if (rs != null) rs.close();
+			if (ps != null) ps.close();
+			if (con != null) con.close();
+		}
+	}
+	public String searchPw(String name, String ssn1, String ssn2, String id) throws SQLException{
+		String sql = "select passwd from jsp_member where name=? and ssn1=? and ssn2=? and id=?";
+		try{
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, ssn1);
+			ps.setString(3, ssn2);
+			ps.setString(4, id);
+			rs = ps.executeQuery();
+			if (rs.next()){
+				String msg = rs.getString(1);
+				return msg;
+			}
+			return null;
+		}finally{
+			if (rs != null) rs.close();
+			if (ps != null) ps.close();
+			if (con != null) con.close();
+		}
+	}
 }
+
+
+
