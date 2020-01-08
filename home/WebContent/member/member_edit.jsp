@@ -78,7 +78,7 @@
   				<tr>
 					<td colspan="2" align="center">
 						<a href="javascript:check()">[전송]</a>
-						<a href="#">[취소]</a>
+						<a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">[취소]</a>
 					</td>
   				</tr>
   			</table>

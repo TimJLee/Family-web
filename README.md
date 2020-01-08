@@ -230,3 +230,13 @@ git merge front2 // front1 의 상태를 포함한 front2 를 master 로 병합
 front1 - 캐러셀 => yeean 이 작업<br>
 front2 - 로그인 화면 먼저 => jaeeyo 이 작업<Br>
 front3 - 이미지 크게 => tim 이 작업
+
+# 2020-01-08
+### 각 브랜치 의미
+front3 - db connection pool 사용하기 직전까지의 버전
+master 로 일단 진행
+### 인증 기능 추가 완료
+도서관리 프로그램은 로그인한 사용자만 들어갈 수 있게 업데이트 완료<br>
+top.jsp 상단 우측에 로그인 기능 추가 완료<br>
+로그인 실패시 login.jsp 로 넘어가도록 설정 완료.<br>
+로그인 페이지 기능으로 비밀번호 찾기, 아이디 찾기 기능 추가 완료

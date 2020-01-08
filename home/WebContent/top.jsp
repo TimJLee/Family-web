@@ -19,18 +19,42 @@
     <!-- Custom styles for this template -->
     <link href="bootstrap-3.3.2/jumbotron/sticky-footer.css" rel="stylesheet">
     <link href="bootstrap-3.3.2/jumbotron/jumbotron.css" rel="stylesheet">
+    <%
+		boolean isLogin = false;
+		String loginId = (String)session.getAttribute("id");
+		if(loginId != null && !(loginId.trim().equals(""))){
+			isLogin = true;
+		}
+	
+	%>
 	<script type="text/javascript">
 		function openMember(){
 			alert('회원가입 유무 조회 페이지로 이동합니다')
 			window.open("<%=request.getContextPath()%>/member/memberSsn.jsp","member","width=600,height=400")
 		}
-	</script>
-	<script type="text/javascript">
 		function openBook(){
+			<%if(isLogin==true){%>
 			alert('도서관리 페이지로 이동합니다')
 			window.open("<%=request.getContextPath()%>/book/index.jsp","book","width=1000,height=600")
+			<%}else{%>
+			alert('로그인을 먼저 해주세요')
+			<%}%>
+			}
+		function loginCheck(){
+			if (f.id.value==""){
+				alert("아이디를 입력하세요!!")
+				f.id.focus()
+				return
+			}
+			if (f.passwd.value==""){
+				alert("비밀번호를 입력하세요!!")
+				f.passwd.focus()
+				return
+			}
+			document.f.submit();
 		}
 	</script>
+	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -39,6 +63,7 @@
   </head>
 
   <body>
+	<%-- 
 	<%
 		boolean isLogin = false;
 		String loginId = (String)session.getAttribute("id");
@@ -47,6 +72,7 @@
 		}
 	
 	%>
+	--%>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -65,21 +91,31 @@
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">회원보기</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=FIND">회원찾기</a></li>
             <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
+            <%-- 
             <%if(isLogin){ %>
              <li><a href="<%=request.getContextPath()%>/login/logout.jsp">로그아웃</a></li>
             <%}else{ %>
             <li><a href="<%=request.getContextPath()%>/login/login.jsp">로그인</a></li>
             <%} %>
+            --%>
           </ul>
+          <%if(isLogin){ %>
           <form class="navbar-form navbar-right">
+            <button type="submit" class="btn btn-success" onclick="location.href='<%=request.getContextPath()%>/login/logout.jsp'">로그아웃</button>
+          </form>
+          <%}else{ %>
+          <form name="f" action="<%=request.getContextPath()%>/login/login_ok.jsp" method="post" class="navbar-form navbar-right">
+	        <div class="form-group">
+	          <input type="text" name="id" placeholder="아이디" class="form-control">
+	        </div>
             <div class="form-group">
-              <input type="text" placeholder="이메일" class="form-control">
+              <input type="password" name="passwd" placeholder="비밀번호" class="form-control">
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="비밀번호" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">로그인</button>
-           </form>
+            <a href="javascript:loginCheck()">
+              <button type="button" class="btn btn-success">로그인</button>
+            </a>
+          </form>
+          <%} %>
         </div><!--/.nav-collapse -->
 
 <!-- 
