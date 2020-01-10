@@ -87,7 +87,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">메인</a></li>
-            <li><a href="#about">게시판</a></li>
+            <li><a href="<%=request.getContextPath()%>/board/list.jsp">게시판</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=ALL">회원보기</a></li>
             <li><a href="<%=request.getContextPath()%>/member/memberAll.jsp?cmd=FIND">회원찾기</a></li>
             <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
