@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!-- login.jsp-->
-<link rel="stylesheet" type="text/css" href="../style.css"> 
+
 <script type="text/javascript">
 	function loginCheck(){
 		
@@ -40,62 +40,98 @@
    }
    //value 값이 null 이면 쿠키에 값이 존재 안한다.(save_id 체크 안했다.)
 %>
-<br>
-<br>
-<p>
-<img src="../img/tm_login.gif" width=100 height="13" border="0" 
-	align=center ALT="회원 로그인">
-<form name="f" action="login_ok.jsp" method="post">
-	<table width="60%" align="center" height="120">
-		<tr>
-			<td align="right" width="30%">
-				<img src="../img/id01.gif" 
-				width="28" height="11" border="0" alt="아이디">&nbsp;&nbsp;
-			</td>
-			<td width="40%">
-			<%if(value==null){ %>
-				<input type="text" name="id" tabindex="1">
-			<%}else{ %>
-				<input type="text" name="id" value="<%=value%>" tabindex="1">
-			<%} %>
-			</td>
-			<td rowspan="2" width="30%" valign="middle">
-				<a href="javascript:loginCheck()">
-					<img src="../img/bt_login.gif" border="0" alt="로그인"  tabindex="3">&nbsp;&nbsp;<br>
-				</a>
-				<nobr>
-				<%if(value==null){ %>
-					<input type="checkbox" name="saveId">
-				<%}else{ %>
-					<input type="checkbox" name="saveId" checked>
-				<%} %>
-					<font face="굴림" size="2">아이디 기억하기</font>
-				</nobr>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<img src="../img/pwd.gif" 
-							width="37" height="11" alt="비밀번호">
-			</td>
-			<td>
-				<input type="password" name="passwd"  tabindex="2">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3" align="center">
-				<a href="javascript:openMember()">
-					<img src="../img/bt_join.gif" width="60" height="22" border="0" alt="회원가입">
- 				</a>	
- 				<a href="javascript:searchMember('id')">
- 					<img src="../img/bt_search_id.gif" border="0" width="60" height="22" alt="아이디 찾기">
- 				</a>	
- 				<a href="javascript:searchMember('pw')">
-					<img src="../img/bt_search_pw.gif" border="0" width="60" height="22" alt="비밀번호 찾기">
-				</a>
-								
-			</td>
-		</tr>
-	</table>
-</form> 
-<%@ include file="../bottom.jsp"%>
+
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>로그인 페이지</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/floating-labels/">
+
+    <!-- Bootstrap core CSS -->
+<link href="../bootstrap-4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap-4.4.1/login/floating-labels.css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="form-signin" name="f" action="login_ok.jsp" method="post">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="../bootstrap-4.4.1/site/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">TOPCIT</h1>
+    <p>로그인 없이 사이트 둘러보기 <a href="<%=request.getContextPath()%>/index.jsp">Go</a></p>
+  </div>
+
+  <div class="form-label-group">
+    <%if(value==null){ %>
+    <input type="text" id="inputId" name="id" class="form-control" placeholder="아이디" required="" autofocus="">
+    <%}else{ %>
+    <input type="text" id="inputId" name="id" value="<%=value%>" class="form-control" placeholder="아이디" required="" autofocus="">
+
+    <%} %>
+    <label for="inputId">아이디</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" name="passwd" class="form-control" placeholder="비밀번호" required="">
+    <label for="inputPassword">비밀번호</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <%if(value==null){ %>
+      <input type="checkbox" name="saveId">
+      <%}else{ %>
+        <input type="checkbox" name="saveId" checked>
+      <%} %>
+      아이디 기억하기
+    </label>
+    <div align="right">
+    <a href="javascript:searchMember('pw')"> 비번 찾기
+    <a href="javascript:searchMember('id')"> 아이디 찾기
+    </div>
+  </div>
+   
+  </div>
+  <a href="javascript:loginCheck()">
+    <button class="btn btn-lg btn-primary btn-block" >Sign in</button>
+  </a><br>
+  <a href="javascript:openMember()">
+    <button class="btn btn-lg btn-primary btn-block" >Sign up</button>
+  </a>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; Tim_J.Lee</p>
+</form>
+
+
+</body></html>

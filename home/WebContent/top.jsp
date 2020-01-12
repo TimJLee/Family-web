@@ -112,6 +112,7 @@
               <input type="password" name="passwd" placeholder="비밀번호" class="form-control">
             </div>
             <a href="javascript:loginCheck()">
+            	
               <button type="button" class="btn btn-success">로그인</button>
             </a>
           </form>

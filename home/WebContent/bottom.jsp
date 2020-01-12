@@ -6,7 +6,7 @@
 
 <footer class="footer">
 	<div class="container">
-		<p class="text-muted">&copy; TimJLee</p>
+		<p class="text-muted">&copy; Tim_J.Lee</p>
 	</div>
 </footer>
 
