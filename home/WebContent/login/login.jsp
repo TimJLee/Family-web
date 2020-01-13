@@ -2,6 +2,14 @@
     pageEncoding="EUC-KR"%>
 <!-- login.jsp-->
 
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>로그인 페이지</title>
+    
 <script type="text/javascript">
 	function loginCheck(){
 		
@@ -42,27 +50,13 @@
 %>
 
 
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>로그인 페이지</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/floating-labels/">
+  
 
     <!-- Bootstrap core CSS -->
-<link href="../bootstrap-4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="../bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Favicons -->
-<link rel="apple-touch-icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="../bootstrap-4.4.1/site/docs/4.4/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#563d7c">
 
 
@@ -88,7 +82,7 @@
   <body>
     <form class="form-signin" name="f" action="login_ok.jsp" method="post">
   <div class="text-center mb-4">
-    <img class="mb-4" src="../bootstrap-4.4.1/site/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <img class="mb-4" src="../bootstrap-4.4.1/login/bootstrap-solid.svg" alt="" width="120" height="120">
     <h1 class="h3 mb-3 font-weight-normal">TOPCIT</h1>
     <p>로그인 없이 사이트 둘러보기 <a href="<%=request.getContextPath()%>/index.jsp">Go</a></p>
   </div>
@@ -125,11 +119,10 @@
    
   </div>
   <a href="javascript:loginCheck()">
-    <button class="btn btn-lg btn-primary btn-block" >Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" >로그인</button>
   </a><br>
-  <a href="javascript:openMember()">
-    <button class="btn btn-lg btn-primary btn-block" >Sign up</button>
-  </a>
+  
+  <input class="btn btn-lg btn-primary btn-block" type="button" value="회원가입" onClick="javascript:openMember()">
   <p class="mt-5 mb-3 text-muted text-center">&copy; Tim_J.Lee</p>
 </form>
 
