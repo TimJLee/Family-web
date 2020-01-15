@@ -54,7 +54,7 @@
   
 
     <!-- Bootstrap core CSS -->
-<link href="../bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Favicons -->
 <meta name="theme-color" content="#563d7c">
@@ -77,12 +77,12 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="../bootstrap-4.4.1/login/floating-labels.css" rel="stylesheet">
+    <link href="../bootstrap/login/floating-labels.css" rel="stylesheet">
   </head>
   <body>
     <form class="form-signin" name="f" action="login_ok.jsp" method="post">
   <div class="text-center mb-4">
-    <img class="mb-4" src="../bootstrap-4.4.1/login/bootstrap-solid.svg" alt="" width="120" height="120">
+    <img class="mb-4" src="../bootstrap/login/bootstrap-solid.svg" alt="" width="120" height="120">
     <h1 class="h3 mb-3 font-weight-normal">TOPCIT</h1>
     <p>로그인 없이 사이트 둘러보기 <a href="<%=request.getContextPath()%>/index.jsp">Go</a></p>
   </div>

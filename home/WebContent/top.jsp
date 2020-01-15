@@ -10,11 +10,11 @@
     <meta name="generator" content="Jekyll v3.8.6">
     <title>이재용 홈페이지</title>
 	
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+  
 
     <!-- Bootstrap core CSS -->
 	<link href="bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" >
-
+	
     <!-- Favicons -->
 
 <meta name="theme-color" content="#563d7c">
@@ -53,7 +53,7 @@
 			document.f.submit();
 		}
 	</script>
-
+	
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -72,20 +72,20 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="bootstrap-4.4.1/index/carousel.css" rel="stylesheet">
+    
   </head>
   <body>
     <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">이재용</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">JSP</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-collapse collapse" id="navbarCollapse" style="">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%=request.getContextPath()%>/index.jsp">메인</a>
-          <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+          <a class="nav-link" href="<%=request.getContextPath()%>/index.jsp">메인<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%=request.getContextPath()%>/board/list.jsp">게시판</a>
@@ -107,12 +107,8 @@
         </form>
       <%}else{ %>
         <form name="f" action="<%=request.getContextPath()%>/login/login_ok.jsp" method="post" class="form-inline mt-2 mt-md-0">
-          <div class="form-group"> <!-- this-->
             <input type="text" name="id" placeholder="아이디" class="form-control mr-sm-2">
-          </div>
-          <div class="form-group">
             <input type="password" name="passwd" placeholder="비밀번호" class="form-control mr-sm-2">
-          </div>
           <a href="javascript:loginCheck()">
             <button type="button" class="btn btn-outline-success my-2 my-sm-0">로그인</button>
           </a>
