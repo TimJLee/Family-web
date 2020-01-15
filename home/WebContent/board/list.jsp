@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ page import="java.util.*, home.board.*" %>    
 <!-- list.jsp -->
-<%@ include file="../top.jsp" %>
+
 <jsp:useBean id="bdao" class="home.board.BoardDataBean" />
 <!--  <link rel="stylesheet" type="text/css" href="../style.css">-->
 <div align="center">
@@ -50,7 +50,6 @@
 	</table>
 	
 </div>
-<%@ include file="../bottom.jsp" %>
 
 
 

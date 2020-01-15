@@ -7,7 +7,6 @@
 			return;
 		}
 %>
-<%@ include file="../top.jsp"%>
 <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <div align="center">
 	<b>±Û »è Á¦</b>
@@ -29,5 +28,4 @@
 		</table>
 	</form>
 </div>
-<%@ include file="../bottom.jsp"%>
 

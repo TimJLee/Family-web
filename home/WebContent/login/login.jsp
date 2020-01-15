@@ -82,8 +82,8 @@
   <body>
     <form class="form-signin" name="f" action="login_ok.jsp" method="post">
   <div class="text-center mb-4">
-    <img class="mb-4" src="../bootstrap/login/bootstrap-solid.svg" alt="" width="120" height="120">
-    <h1 class="h3 mb-3 font-weight-normal">TOPCIT</h1>
+    <img class="mb-4" src="../img/logmain.jpg" alt="" width="120" height="120">
+    <h1 class="h3 mb-3 font-weight-normal">권세 중딩 축하</h1>
     <p>로그인 없이 사이트 둘러보기 <a href="<%=request.getContextPath()%>/index.jsp">Go</a></p>
   </div>
 

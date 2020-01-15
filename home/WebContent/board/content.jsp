@@ -10,7 +10,6 @@
 		}
 		BoardDBBean dto = bdao.getBoard(Integer.parseInt(snum), "content");
 %>  
-<%@ include file="../top.jsp"%>
 <div align="center">
 	<b>글 내 용 보 기</b>
 	<table border="1" width="600">
@@ -47,7 +46,6 @@
 		</tr>
 	</table>
 </div>
-<%@ include file="../bottom.jsp"%>
 
 
 
