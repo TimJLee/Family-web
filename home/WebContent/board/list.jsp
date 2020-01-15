@@ -4,7 +4,7 @@
 <!-- list.jsp -->
 <%@ include file="../top.jsp" %>
 <jsp:useBean id="bdao" class="home.board.BoardDataBean" />
-<link rel="stylesheet" type="text/css" href="../style.css">
+<!--  <link rel="stylesheet" type="text/css" href="../style.css">-->
 <div align="center">
 	<b>글 목 록</b>
 	<table border="0" width="100%">
@@ -28,13 +28,9 @@
 		if (pageNum == null){
 			pageNum = "1";
 		}
-		int currentPage = Integer.parseInt(pageNum);
-		int startNum = (currentPage - 1) * pageCount + 1;
-		int endNum = startNum + pageCount - 1;
-		int numCount = bdao.getMaxCount(); 
-		if (endNum > numCount) endNum = numCount;
 
-		List<BoardDBBean> boardList = bdao.listBoard(startNum, endNum);  
+
+		List<BoardDBBean> boardList = bdao.listBoard();  
 		if (boardList == null || boardList.size()==0){%>
 		<tr>
 			<td colspan="6">등록된 게시글이 없습니다.</td>
@@ -43,13 +39,7 @@
 			for (BoardDBBean dto : boardList){%>
 		<tr>
 			<td><%=dto.getNum()%></td>
-			<td>
-<%			if(dto.getRe_level()>0){ %>
-					<img src="../img/level.gif" width="<%=dto.getRe_level()*10%>" height="20">
-					<img src="../img/re.gif">
-<%			} %>			
-				<a href="content.jsp?num=<%=dto.getNum()%>"><%=dto.getSubject()%></a>
-			</td>
+			<td><a href="content.jsp?num=<%=dto.getNum()%>"><%=dto.getSubject()%></a></td>
 			<td><%=dto.getWriter()%></td>
 			<td><%=dto.getReg_date()%></td>
 			<td><%=dto.getReadcount()%></td>
@@ -58,22 +48,7 @@
 <%		}
 		} %>				
 	</table>
-<%	if (numCount>0){ 
-			int pageBlock = 3;
-			int maxPage = numCount / pageCount + (numCount%pageCount==0 ? 0 : 1);
-			int startPage = (currentPage -1) / pageBlock * pageBlock + 1;
-			int endPage = startPage + pageBlock - 1;
-			if (endPage > maxPage) endPage = maxPage;
-			if (startPage>pageBlock){%>
-				[<a href="list.jsp?pageNum=<%=startPage-pageBlock%>">이전</a>]
-<%		}
-			for (int i=startPage; i<=endPage; ++i){%>
-				[<a href="list.jsp?pageNum=<%=i%>"><%=i%></a>]
-<%		}			
-			if (endPage < maxPage) {%>
-				[<a href="list.jsp?pageNum=<%=startPage+pageBlock%>">다음</a>]
-<%		}		
-		} %>	
+	
 </div>
 <%@ include file="../bottom.jsp" %>
 

@@ -10,7 +10,7 @@
 		BoardDBBean dto = bdao.getBoard(Integer.parseInt(snum), "update");
 %>  
 <%@ include file="../top.jsp"%>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <script type="text/javascript">
 	function check(){
 		if (f.subject.value==""){

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ include file="../top.jsp"%>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <script type="text/javascript">
 	function check(){
 		if (f.writer.value==""){

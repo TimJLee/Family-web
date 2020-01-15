@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="home.board.*"%>
 <jsp:useBean id="bdao" class="home.board.BoardDataBean" />
-<link rel="stylesheet" type="text/css" href="../style.css"> 
+<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <%
 		String snum = request.getParameter("num");
 		if (snum == null || snum.trim().equals("")){

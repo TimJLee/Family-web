@@ -8,7 +8,7 @@
 		}
 %>
 <%@ include file="../top.jsp"%>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <div align="center">
 	<b>±Û »è Á¦</b>
 	<form name="f" action="deletePro.jsp" method="post">

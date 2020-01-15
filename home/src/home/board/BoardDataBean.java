@@ -21,7 +21,7 @@ public class BoardDataBean {
 		}
 	}
 	public List<BoardDBBean> listBoard() throws SQLException{
-		String sql = "select * from board order by num desc";
+		String sql = "select * from board order by num";
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
@@ -48,27 +48,15 @@ public class BoardDataBean {
 			dto.setReg_date(rs.getString("reg_date"));
 			dto.setContent(rs.getString("content"));
 			dto.setIp(rs.getString("ip"));
-			dto.setRe_step(rs.getInt("re_step"));
-			dto.setRe_level(rs.getInt("re_level"));
 			boardList.add(dto);
 		}
 		return boardList;
 	}
 	
 	public int insertBoard(BoardDBBean dto) throws SQLException{
-		String sql = "";
-		if (dto.getNum()==0) {	//새글이냐
-			sql = "update board set re_step = re_step + 1";
-		}else {
-			sql = "update board set re_step = re_step + 1 where re_step > " + dto.getRe_step();
-			dto.setRe_step(dto.getRe_step() + 1);
-			dto.setRe_level(dto.getRe_level() + 1);
-		}
+		String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate,0,?,?)";
 		try {
 			con = ds.getConnection();
-			ps = con.prepareStatement(sql);
-			ps.executeUpdate();
-			sql = "insert into board values(board_seq.nextval, ?,?,?,?,sysdate, 0, ?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getWriter());
 			ps.setString(2, dto.getEmail());
@@ -76,8 +64,6 @@ public class BoardDataBean {
 			ps.setString(4, dto.getPasswd());
 			ps.setString(5, dto.getContent());
 			ps.setString(6, dto.getIp());
-			ps.setInt(7, dto.getRe_step());
-			ps.setInt(8, dto.getRe_level());
 			int res = ps.executeUpdate();
 			return res;
 		}finally {
