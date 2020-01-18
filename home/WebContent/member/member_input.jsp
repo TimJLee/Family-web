@@ -16,18 +16,21 @@
 			return;
 		}
 		
-		int res = mbdao.insertMember(mbdto); 
-		if (res>0){%>
-			<script type="text/javascript">
-				alert("회원등록성공!! 로그인을 하신 후 이용해 주세요")
-				self.close()
-			</script>			
-<%	}else{ %>
-			<script type="text/javascript">
-				alert("회원등록실패!! 다시 입력해 주세요")
-				location.href="memberSsn.jsp"
-			</script>
-<%	} %>		
+		
+		else {
+			int res = mbdao.insertMember(mbdto); 
+			if (res>0){%>
+				<script type="text/javascript">
+					alert("회원등록성공!! 로그인을 하신 후 이용해 주세요")
+					self.close()
+				</script>			
+			<%}else{ %>
+				<script type="text/javascript">
+					alert("회원등록실패!! 다시 입력해 주세요")
+					location.href="memberSsn.jsp"
+				</script>
+			<%}
+		}%>
 
 
 

@@ -20,11 +20,15 @@ public class BoardDataBean {
 			System.out.println("lookup실패 : " + e.getMessage());
 		}
 	}
-	public List<BoardDBBean> listBoard() throws SQLException{
-		String sql = "select * from board order by num";
+	public List<BoardDBBean> listBoard(int start, int end) throws SQLException{
+		//String sql = "select * from board order by re_step asc";
+		String sql = "select * from (select rownum rn, A.* from "
+				+ "(select * from board order by re_step asc)A) where rn between ? and ?";
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
+			ps.setInt(1, start);
+			ps.setInt(2, end);
 			rs = ps.executeQuery();
 			List<BoardDBBean> boardList = makeList(rs);
 			return boardList;
@@ -48,13 +52,29 @@ public class BoardDataBean {
 			dto.setReg_date(rs.getString("reg_date"));
 			dto.setContent(rs.getString("content"));
 			dto.setIp(rs.getString("ip"));
+			dto.setRe_step(rs.getInt("re_step"));
+			dto.setRe_level(rs.getInt("re_level"));
 			boardList.add(dto);
 		}
 		return boardList;
 	}
 	
 	public int insertBoard(BoardDBBean dto) throws SQLException{
-		String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate,0,?,?)";
+		if(dto.getNum()==0) { //원글이다
+			String sql = "update board set re_step = re_step+1";
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			int res = ps.executeUpdate();
+		}else {	//답글이다
+			String sql = "update board set re_step=re_step+1 where re_step > ?";
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, dto.getRe_step());
+			int res = ps.executeUpdate();
+			dto.setRe_step(dto.getRe_step()+1);
+			dto.setRe_level(dto.getRe_level()+1);
+		}
+		String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate,0,?,?,?,?)";
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(sql);
@@ -64,6 +84,8 @@ public class BoardDataBean {
 			ps.setString(4, dto.getPasswd());
 			ps.setString(5, dto.getContent());
 			ps.setString(6, dto.getIp());
+			ps.setInt(7, dto.getRe_step());
+			ps.setInt(8, dto.getRe_level());
 			int res = ps.executeUpdate();
 			return res;
 		}finally {
@@ -169,6 +191,21 @@ public class BoardDataBean {
 			if (rs != null) rs.close();
 			if (ps != null) ps.close();
 			if (con != null) con.close();
+		}
+	}
+	
+	public int getCount() throws SQLException{
+		String sql="select count(*) from board";
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			return rs.getInt(1);
+		}finally {
+			if(rs != null) rs.close();
+			if(ps != null) ps.close();
+			if(con != null) con.close();
 		}
 	}
 }

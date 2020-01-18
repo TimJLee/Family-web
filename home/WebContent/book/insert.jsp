@@ -3,6 +3,18 @@
 <html>
 <head>
 	<title>도서관리</title>
+	<script type="text/javascript">
+	
+		function checkValue(){
+			
+			if(isNaN(insert.price.value)){
+				alert("판매가는 숫자만 입력가능합니다.");
+				f.price.focus()
+				return
+			}
+			document.insert.submit()
+		}
+	</script>
 </head>
 <%
 	String loginId = (String) session.getAttribute("id");
@@ -25,7 +37,7 @@
 				출판사 : <input type="text" name="publisher"><br>
 				지은이 : <input type="text" name="writer"><br>
 				판매가 : <input type="text" name="price"><br>
-				<input type="submit" value="등록">
+				<a href="javascript:checkValue()"><input type="button" value="등록"></a>
 				<input type="reset" value="취소">
 				</td>
 			</tr>

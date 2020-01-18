@@ -15,7 +15,19 @@
 				f.passwd.focus()
 				return
 			}
+			if(f.idDuplication.value != "idCheck"){
+				alert("아이디 중복체크를 해주세요.")
+				return
+			}
 			document.f.submit()
+		}
+		
+		function openIdChk(){
+			window.open("member/idCheck_ok.jsp",
+					"chkForm","width=500, height=300, resizable = no, scrollbars = no")
+		}
+		function inputIdChk(){
+			document.f.idDuplication.value = "idUncheck"
 		}
 	</script>
 </head>
@@ -46,8 +58,20 @@
 				<tr>
 					<td width="150" class="m3">아이디</td>
 					<td class="m3">
-						<input type="text" name="id" class="box">
+						<form name="idchk" action="idCheck_ok.jsp" method="post">
+							<input type="text" name="id" class="box" onkeydown="inputIdChk()">
+							<!-- 아이디 입력란에는 키보드 입력시 발생하는 onkeydown 이벤트를 추가한다. 
+							이 이벤트를 사용하는 것은 만약 사용자가 중복체크를 하고 난 뒤 아이디 입력란에 사용 가능한 
+							아이디를 지우고 새로운 아이디를 입력했을 경우에 대처하기 위함이다. 이렇게 하면 중복체크가 되지 않은 것으로 처리되도록 한다.
+							 -->
+							<input type="submit" value="중복확인" class="box">
+						</form>
+						<input type="hidden" name="idDuplication" value="idUncheck">
+						<!-- 아이디 중복체크를 했는지 판단하기 위한 부분이다.
+						 <input type="hidden">의 value가 idUncheck 이면 중복체크를 하지 않은 것이다.
+						-->
 					</td>
+					
   				</tr>
   				<tr>
 					<td width="150" class="m3">비밀번호</td>

@@ -251,6 +251,26 @@ public class MemberDAO {
 			if (con != null) con.close();
 		}
 	}
+	public boolean checkId(String id) throws SQLException {
+		String sql = "select id from jsp_member where id=?";
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if (rs.next())
+				return true;
+			else
+				return false;
+		} finally {
+			if (rs != null)
+				rs.close();
+			if (ps != null)
+				ps.close();
+			if (con != null)
+				con.close();
+		}
+	}
 }
 
 

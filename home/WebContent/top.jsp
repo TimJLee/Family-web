@@ -99,7 +99,7 @@
                 <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
                 <li><a href="<%=request.getContextPath()%>/board/list.jsp">게시판</a></li>
                 <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
-                <li><a href="<%=request.getContextPath()%>/login/login.jsp">로그인</a></li>
+                <%-- <li><a href="<%=request.getContextPath()%>/login/login.jsp">로그인</a></li> --%>
                 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">회원관리 <span class="caret"></span></a>

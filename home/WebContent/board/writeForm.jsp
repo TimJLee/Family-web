@@ -27,7 +27,7 @@
 	}
 </script>
 <%
-		int num=0, re_step=0, re_level=0;
+		int num=0, re_step=0, re_level=0; // 원글이다
 		String snum = request.getParameter("num");
 		if (snum != null){	//답글이다
 			num = Integer.parseInt(snum);
