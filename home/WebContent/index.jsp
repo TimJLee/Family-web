@@ -121,10 +121,10 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+   
 
       <!-- /END THE FEATURETTES -->
-
+	</body>
 
 <%@ include file="bottom.jsp"%>
   

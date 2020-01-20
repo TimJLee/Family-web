@@ -15,10 +15,12 @@
 				f.passwd.focus()
 				return
 			}
+			/*
 			if(f.idDuplication.value != "idCheck"){
 				alert("아이디 중복체크를 해주세요.")
 				return
 			}
+			*/
 			document.f.submit()
 		}
 		
@@ -58,6 +60,10 @@
 				<tr>
 					<td width="150" class="m3">아이디</td>
 					<td class="m3">
+						<input type="text" name="id" class="box">
+					</td>
+					<%--  
+					<td class="m3">
 						<form name="idchk" action="idCheck_ok.jsp" method="post">
 							<input type="text" name="id" class="box" onkeydown="inputIdChk()">
 							<!-- 아이디 입력란에는 키보드 입력시 발생하는 onkeydown 이벤트를 추가한다. 
@@ -71,7 +77,7 @@
 						 <input type="hidden">의 value가 idUncheck 이면 중복체크를 하지 않은 것이다.
 						-->
 					</td>
-					
+					--%>
   				</tr>
   				<tr>
 					<td width="150" class="m3">비밀번호</td>

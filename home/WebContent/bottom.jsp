@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-
-
+   <hr class="featurette-divider">
+   </body>
     
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p> &copy; Tim_J.Lee 저작권은 이재용에게 있습니다 <a href="https://timjlee.github.io/">개발자 이재용 홈페이지</a> · <a href="https://github.com/TimJLee/jsp_project">MIT License</a></p>
+        <br>
+        <p> &copy; Tim_J.Lee <br>저작권은 이재용에게 있습니다 <br>
+        <a href="https://timjlee.github.io/">개발자 이재용 홈페이지</a> · <a href="https://github.com/TimJLee/jsp_project">프로젝트 깃허브 주소</a></p>
       </footer>
 
     </div><!-- /.container -->

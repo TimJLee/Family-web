@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="home.board.*"%>
 <jsp:useBean id="bdao" class="home.board.BoardDataBean" />
+<%@ include file="../top.jsp"%>
+
 <%
 		String snum = request.getParameter("num");
 		if (snum == null || snum.trim().equals("")){
@@ -9,7 +11,6 @@
 		}
 		BoardDBBean dto = bdao.getBoard(Integer.parseInt(snum), "update");
 %>  
-<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <script type="text/javascript">
 	function check(){
 		if (f.subject.value==""){
@@ -30,34 +31,35 @@
 		return true
 	}
 </script>
-<div align="center">
+<br><br><br><br><br>
+<div class="container">
 <form name="f" action="updatePro.jsp" method="post" onsubmit="return check()">
 	<input type="hidden" name="num" value="<%=snum%>"/>
-	<table border="1" width="600">
-		<tr bgcolor="yellow">
+	<table class="table" border="1">
+		<tr bgcolor="">
 			<td align="center" colspan="2">글 수 정</td>
 		</tr>
 		<tr>
-			<th bgcolor="yellow" width="20%">이름</th>
-			<td><input type="text" name="writer" value="<%=dto.getWriter()%>" readOnly></td>
+			<th bgcolor="" width="20%">이름</th>
+			<td><input class="form-control" type="text" name="writer" value="<%=dto.getWriter()%>" readOnly></td>
 		</tr>
 		<tr>
-			<th bgcolor="yellow" width="20%">제목</th>
-			<td><input type="text" name="subject" size="60" value="<%=dto.getSubject()%>"></td>
+			<th bgcolor="" width="20%">제목</th>
+			<td><input class="form-control" type="text" name="subject" size="60" value="<%=dto.getSubject()%>"></td>
 		</tr>
 		<tr>
-			<th bgcolor="yellow" width="20%">이메일</th>
-			<td><input type="text" name="email" size="60" value="<%=dto.getEmail()%>"></td>
+			<th bgcolor="" width="20%">이메일</th>
+			<td><input class="form-control" type="text" name="email" size="60" value="<%=dto.getEmail()%>"></td>
 		</tr>
 		<tr>
-			<th bgcolor="yellow" width="20%">내용</th>
-			<td><textarea name="content" rows="10" cols="60"><%=dto.getContent()%></textarea></td>
+			<th bgcolor="" width="20%">내용</th>
+			<td><textarea class="form-control" name="content" rows="10" cols="60"><%=dto.getContent()%></textarea></td>
 		</tr>
 		<tr>
-			<th bgcolor="yellow" width="20%">비밀번호</th>
-			<td><input type="password" name="passwd"></td>
+			<th bgcolor="" width="20%">비밀번호</th>
+			<td><input class="form-control" type="password" name="passwd"></td>
 		</tr>
-		<tr bgcolor="yellow">
+		<tr bgcolor="">
 			<td align="center" colspan="2">
 				<input type="submit" value="글수정">
 				<input type="reset" value="다시쓰기">
@@ -66,8 +68,8 @@
 		</tr>
 	</table>
 </form>	
-</div>
 
+<%@ include file="../bottom.jsp"%>
 
 
 
