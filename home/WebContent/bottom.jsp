@@ -9,7 +9,7 @@
         <p class="pull-right"><a href="#">Back to top</a></p>
         <br>
         <p> &copy; Tim_J.Lee <br>저작권은 이재용에게 있습니다 <br>
-        <a href="https://timjlee.github.io/">개발자 이재용 홈페이지</a> · <a href="https://github.com/TimJLee/jsp_project">프로젝트 깃허브 주소</a></p>
+        <a href="https://timjlee.github.io/">개발자 이재용 홈페이지</a> · <a href="https://github.com/TimJLee/jsp_project">프로젝트 깃허브 바로가기</a></p>
       </footer>
 
     </div><!-- /.container -->

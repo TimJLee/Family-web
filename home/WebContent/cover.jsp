@@ -63,7 +63,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">아래 버튼을 클릭하세요</h1>
-            <p class="lead">힘들다고 좌절하지 말라. 때는 반드시 온다. 준비하라. 때를 맞이할 준비를 하라. 노력은 절대 너를 배반하지 않을 것이다. 너의 시작은 미약하였으나 그 끝은 창대하리라.</p>
+            <p class="lead">시작은 미약하였으나 그 끝은 창대하리라.</p>
             <p class="lead">
               <a href="<%=request.getContextPath()%>/index.jsp" class="btn btn-lg btn-default">여기를 클릭</a>
             </p>

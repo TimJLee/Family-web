@@ -42,6 +42,29 @@
 	
 	%>
 	<script type="text/javascript">
+		function check(){
+			if (board.writer.value==""){
+				alert("이름을 입력해 주세요!!")
+				board.writer.focus()
+				return false
+			}
+			if (board.subject.value==""){
+				alert("제목을 입력해 주세요!!")
+				board.subject.focus()
+				return false
+			}
+			if (board.content.value==""){
+				alert("내용을 입력해 주세요!!")
+				board.content.focus()
+				return false
+			}
+			if (board.passwd.value==""){
+				alert("비밀번호를 입력해 주세요!!")
+				board.passwd.focus()
+				return false
+			}
+			return true
+		}
 		function openMember(){
 			alert('회원가입 유무 조회 페이지로 이동합니다')
 			window.open("<%=request.getContextPath()%>/member/memberSsn.jsp","member","width=600,height=400")
@@ -99,7 +122,7 @@
                 <li class="active"><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
                 <li><a href="<%=request.getContextPath()%>/board/list.jsp">게시판</a></li>
                 <li><a href="<%=request.getContextPath()%>/company.jsp">사이트소개</a></li>
-                <%-- <li><a href="<%=request.getContextPath()%>/login/login.jsp">로그인</a></li> --%>
+                <li><a href="javascript:openMember()">회원가입</a></li>
                 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">회원관리 <span class="caret"></span></a>

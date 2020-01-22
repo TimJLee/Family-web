@@ -11,29 +11,10 @@
 		}
 		BoardDBBean dto = bdao.getBoard(Integer.parseInt(snum), "update");
 %>  
-<script type="text/javascript">
-	function check(){
-		if (f.subject.value==""){
-			alert("제목을 입력해 주세요!!")
-			f.subject.focus()
-			return false
-		}
-		if (f.content.value==""){
-			alert("내용을 입력해 주세요!!")
-			f.content.focus()
-			return false
-		}
-		if (f.passwd.value==""){
-			alert("비밀번호를 입력해 주세요!!")
-			f.passwd.focus()
-			return false
-		}
-		return true
-	}
-</script>
+
 <br><br><br><br><br>
 <div class="container">
-<form name="f" action="updatePro.jsp" method="post" onsubmit="return check()">
+<form name="board" action="updatePro.jsp" method="post" onsubmit="return check()">
 	<input type="hidden" name="num" value="<%=snum%>"/>
 	<table class="table" border="1">
 		<tr bgcolor="">

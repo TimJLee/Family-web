@@ -5,8 +5,9 @@
 <%@ include file="../top.jsp"%>
 
 <jsp:useBean id="bdao" class="home.board.BoardDataBean" />
+
 <br><br><br><br><br>
-<div align="center" class="container marketing">
+<div class="container">
 
 	<table class="table table-hover">
 		<thead>
@@ -67,7 +68,7 @@
 		int endPage = startPage + pageBlock - 1;
 		if (endPage>totPage) endPage = totPage;%>
 		
-		
+		<br><br><br>
 		<div class="text-center">
 		  <ul class="pagination">
 			<%if(startPage != 1){%>
