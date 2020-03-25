@@ -113,8 +113,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">하지만 그 중에 젤 귀요미는 꿩세 <br><span class="text-muted">권세가 부릅니다. 꿀벌아~꿀벌아~ 모~~하~늬~~~</span></h2>
-          <p class="lead">feat. 중딩꿩세</p>
+          <h2 class="featurette-heading">하이<br><span class="text-muted">부자가 될거여~~~</span></h2>
+          <p class="lead">부자가 될거야</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="<%=request.getContextPath()%>/img/pingu2.jpg" data-holder-rendered="true">

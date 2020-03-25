@@ -31,6 +31,7 @@
 			</tr>
 		</table>
 	</form>
+	<br><b>주민번호는 아무거나 막 입력하셔도 됩니다!</b>
 </div>
 </body>
 </html>	
