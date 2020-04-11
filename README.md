@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to jsp_project 👋</h1>
+<h1 align="center">Welcome to family web 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/TimJLee/jsp_project/wiki/jsp_project-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80" target="_blank">
